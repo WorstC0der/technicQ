@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Centered Side Menu with Container</title>
-    <link rel="stylesheet" href="/styles.css" />
+    <title>TecnicQ</title>
+    <link rel="stylesheet" href="../styles.css" />
   </head>
   <body>
     <header>
@@ -12,14 +12,13 @@
         <a href="actions.html">Акции</a>
         <a href="stores.html">Магазины</a>
         <a href="bonus.html">Бонусная программа</a>
-        <a href="vacancies.html">Вакансии</a>
       </nav>
     </header>
 
     <div class="container">
       <div class="logo">
         <img
-          src="/logo.png"
+          src="../img/logo.png"
           alt="Logo"
           onclick="window.location.href='main.html';"
         />
@@ -29,31 +28,107 @@
     <div class="container">
       <div class="sidebar">
         <ul>
-          <li><img src="/smartphone.svg" class="pic" />Смартфоны</li>
+          <li><img src="../img/smartphone.svg" class="pic" />Смартфоны</li>
           <li>
-            <img src="/computer.svg" class="pic" />ПК, ноутбуки, периферия
+            <img src="../img/computer.svg" class="pic" />ПК, ноутбуки, периферия
           </li>
-          <li><img src="/processor.svg" class="pic" />Комплектующие для ПК</li>
-          <li><img src="/power.svg" class="pic" />Аксессуары и услуги</li>
+          <li>
+            <img src="../img/processor.svg" class="pic" />Комплектующие для ПК
+          </li>
+          <li><img src="../img/power.svg" class="pic" />Аксессуары и услуги</li>
         </ul>
       </div>
 
       <div class="main-content">
-        <div class="card">
-          <h3>Акции</h3>
-          <span>Скидки, рассрочки, выгодные комплекты</span>
+        <div class="content">
+          <a href="../pages/actions.html">
+            <div class="card actions">
+              <h3>Акции</h3>
+              <span>Скидки, рассрочки, выгодные комплекты</span>
+            </div>
+          </a>
+          <a href="">
+            <div class="card build-pc">
+              <h3>Собрать ПК</h3>
+              <span>Без проблем с совместимостью</span>
+            </div>
+          </a>
+          <a href="">
+            <div class="card ready-made-assemblies">
+              <h3>Готовые сборки</h3>
+              <span>Горячие сборки ПК от пользователей</span>
+            </div>
+          </a>
+          <a href="../pages/help.html">
+            <div class="card help">
+              <h3>Помощь</h3>
+              <span>Частые вопросы, полезная информация</span>
+            </div>
+          </a>
         </div>
-        <div class="card">
-          <h3>Собрать ПК</h3>
-          <span>Без проблем с совместимостью</span>
-        </div>
-        <div class="card">
-          <h3>Готовые сборки</h3>
-          <span>Горячие сборки пк от пользователей</span>
-        </div>
-        <div class="card">
-          <h3>Помощь</h3>
-          <span>Частые вопросы, полезная информация</span>
+        <br />
+        <div class="content">
+          <div class="transparent-card">
+            <h3>Работаем из дома</h3>
+            <div class="actual-offers">
+              <div class="white-card">
+                <div class="img_container">
+                  <a>
+                    <img src="../img/laptop.jpg" class="actual-offers-img" />
+                  </a>
+                </div>
+              </div>
+              <div class="nav-card">
+                <a href="">Ноутбуки</a>
+                <a href="">Мониторы</a>
+                <a href="">Персональные <br />компьютеры</a>
+                <a href="">Моноблоки</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="transparent-card">
+            <h3>Пора обновиться</h3>
+            <div class="actual-offers">
+              <div class="white-card">
+                <div class="img_container">
+                  <a>
+                    <img
+                      src="../img/video_card.webp"
+                      class="actual-offers-img"
+                    />
+                  </a>
+                </div>
+              </div>
+              <div class="nav-card">
+                <a href="">Видеокарты</a>
+                <a href="">Процессоры</a>
+                <a href="">Материнские<br />платы</a>
+                <a href="">Блоки питания</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="transparent-card">
+            <h3>Аксессуары для каждого</h3>
+            <div class="actual-offers">
+              <div class="white-card">
+                <div class="img_container">
+                  <a>
+                    <img
+                      src="../img/headphones.jpg"
+                      class="actual-offers-img"
+                    />
+                  </a>
+                </div>
+              </div>
+              <div class="nav-card">
+                <a href="">Чехлы</a>
+                <a href="">Наушники и<br />гарнитуры</a>
+                <a href="">Мыши и<br />клавиатуры</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
