@@ -1,10 +1,8 @@
 body {
   margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background: linear-gradient(180deg,#fff 6.1%,#f7f7f7 68.7%);
+  width: 100%;
+  position: relative;
 }
 
 header {
@@ -24,10 +22,11 @@ footer {
 
 .container {
   display: flex;
-  width: 80%;
   padding: 10px;
   box-sizing: border-box;
   height: auto;
+  max-width: 1180px;
+  margin: 0 auto;
 }
 
 .sidebar {
@@ -57,7 +56,7 @@ footer {
 
 .content {
   display: flex;
-  padding: 10px;
+  padding: 10px 0;
   box-sizing: border-box;
   height: auto;
 }
@@ -68,10 +67,15 @@ footer {
   background: linear-gradient(to top, #006779, #00a1b4);
   border-radius: 10px;
   height: 70px;
+  transition: ease-in-out 0.3s;
 }
 
 .logo img {
   width: 100%;
+}
+
+.logo:hover {
+  scale: 1.03;
 }
 
 .pic {
@@ -112,11 +116,11 @@ a {
 
 .card {
   height: 180px;
-  width: 166.25px;
+  width: 165px;
   background-color: #e6fbff;
   border-radius: 10px;
   padding: 20px;
-  margin: 0 7.5px;
+  margin: 0 5px;
 }
 
 .card:hover {
@@ -157,8 +161,7 @@ a {
 
 .transparent-card {
   height: 200px;
-  width: 280px;
-  margin: 0 7.5px;
+  width: 278.333px;
 }
 
 .white-card {
@@ -172,6 +175,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: white;
 }
 
 .img_container a {
