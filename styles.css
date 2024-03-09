@@ -1,3 +1,4 @@
+/* Основные */
 body {
   margin: 0;
   background: linear-gradient(180deg, #fff 6.1%, #f7f7f7 68.7%);
@@ -8,31 +9,23 @@ body {
 
 header {
   color: #575757;
-  padding: 10px;
-  text-align: center;
-  width: 100%;
-}
-
-footer {
-  background-color: #006779;
-  color: #fff;
-  padding: 10px;
-  margin: 30px 0 0;
+  padding: 10px 0;
   text-align: center;
   width: 100%;
 }
 
 .container {
   display: flex;
-  padding: 10px;
   box-sizing: border-box;
   height: auto;
   max-width: 1180px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 10px auto;
 }
 
 .sidebar {
   width: 280px;
+  box-sizing: border-box;
 }
 
 .sidebar ul {
@@ -48,7 +41,7 @@ footer {
 }
 
 .sidebar ul li a:hover {
-  color: #14a6c0;
+  color: #00aec2;
 }
 
 .main-content {
@@ -61,6 +54,8 @@ footer {
   padding: 10px 0;
   box-sizing: border-box;
   height: auto;
+  justify-content: space-around;
+  width: 100%;
 }
 
 .logo {
@@ -69,7 +64,6 @@ footer {
   background: linear-gradient(to top, #006779, #00a1b4);
   border-radius: 10px;
   height: 70px;
-  transition: ease-in-out 0.3s;
 }
 
 .logo img {
@@ -77,12 +71,12 @@ footer {
 }
 
 .logo:hover {
-  scale: 1.03;
+  background: linear-gradient(to top, #007488, #00aec2);
 }
 
 .pic {
   height: 18px;
-  padding-right: 5px;
+  padding-right: 10px;
 }
 
 nav {
@@ -94,11 +88,11 @@ nav a {
 }
 
 nav a:hover {
-  color: #14a6c0;
+  color: #00aec2;
 }
 
 nav a.active {
-  color: #14a6c0;
+  color: #00aec2;
   font-weight: bold;
 }
 
@@ -112,7 +106,7 @@ nav a.active {
 }
 
 .nav-card a:hover {
-  color: #14a6c0;
+  color: #00aec2;
 }
 
 a {
@@ -124,7 +118,7 @@ a {
   height: 180px;
   width: 165px;
   background-color: #e6fbff;
-  border-radius: 10px;
+  border-radius: 15px;
   padding: 20px;
   margin: 0 5px;
 }
@@ -134,35 +128,35 @@ a {
 }
 
 .actions {
-  background-image: url("img/actions.png");
-  background-size: cover;
-  background-position: right bottom;
-  background-repeat: no-repeat;
-  background-size: 200px;
-}
-
-.build-pc {
-  background-image: url("img/apgreid.png");
+  background-image: url("img/index/actions.png");
   background-size: cover;
   background-position: right bottom;
   background-repeat: no-repeat;
   background-size: 150px;
 }
 
-.ready-made-assemblies {
-  background-image: url("img/ready-made-assemblies.png");
+.build-pc {
+  background-image: url("img/index/apgreid.png");
   background-size: cover;
   background-position: right bottom;
   background-repeat: no-repeat;
-  background-size: 130px;
+  background-size: 140px;
+}
+
+.ready-made-assemblies {
+  background-image: url("img/index/ready-made-assemblies.png");
+  background-size: cover;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-size: 110px;
 }
 
 .help {
-  background-image: url("img/help.png");
+  background-image: url("img/index/help.png");
   background-size: cover;
   background-position: right bottom;
   background-repeat: no-repeat;
-  background-size: 120px;
+  background-size: 110px;
 }
 
 .transparent-card {
@@ -205,21 +199,238 @@ h3 {
   color: black;
 }
 
-span {
+p {
   font-size: 14px;
   color: black;
 }
 
-.list-container {
-  margin: 0 auto;
-}
-.action-card {
-  display: block;
-  width: 100%;
-  margin-bottom: 10px;
+.brand-card {
+  float: left;
+  height: 50px;
+  width: 110px;
   padding: 15px;
   border-radius: 15px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
   margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: white;
+}
+
+.brand-card:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+  background-color: #006779;
+  padding: 10px 0;
+  margin: 30px 0 0;
+
+  width: 100%;
+}
+
+footer p {
+  color: #fff;
+}
+
+.footer-container {
+  height: auto;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.footer-titles {
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #00849b;
+}
+
+.footer-text {
+  font-size: 16px;
+  margin: 0px;
+}
+
+.footer-copyright {
+  padding-top: 20px;
+  border-top: 1px solid #00849b;
+  text-align: center;
+}
+
+.footer-group {
+  width: 280px;
+  box-sizing: border-box;
+  margin: 0 10px;
+}
+
+.footer-group ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-group ul li {
+  padding: 10px;
+  display: flex;
+  cursor: default;
+}
+
+.footer-group a {
+  color: white;
+}
+
+.footer-group ul li a:hover {
+  color: #00aec2;
+}
+
+.footer-group a:hover {
+  color: #00aec2;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+/* Акции */
+
+.action-card {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  background-color: white;
+  cursor: default;
+}
+
+.action-card a {
+  padding-bottom: 5px;
+  color: black;
+  font-weight: bold;
+}
+
+.action-card a:hover {
+  color: #00aec2;
+}
+
+.action-card-poster {
+  border-radius: 8px;
+  display: block;
+  height: auto;
+  max-width: 30%;
+  max-height: 200px;
+  margin-right: 20px;
+}
+
+.text-in-card {
+  display: block;
+}
+
+.promotion {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.type-of-promotion {
+  font-size: 12px;
+  margin-top: 20px;
+  color: #00bfa5;
+  background-color: #dbfff4;
+  padding: 4px 8px;
+  border-radius: 5px;
+  letter-spacing: 0.4px;
+}
+
+.checkbox {
+  background-color: white;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+}
+
+.checkbox li:hover {
+  background-color: #e6fbff;
+}
+
+/* Помощь */
+
+.help-card {
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 60px;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+}
+
+.help-card h4 {
+  margin: 0px;
+  position: relative;
+  margin-left: 15px;
+}
+
+.help-card::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 5px 0 5px;
+  border-color: #333 transparent transparent transparent;
+  margin-left: auto;
+  margin-right: 15px;
+}
+
+.help-card:hover {
+  color: #00aec2;
+  cursor: default;
+}
+
+/* Магазины */
+
+.shop-info {
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  background-color: white;
+}
+
+.shop-group {
+  box-sizing: border-box;
+  width: 50%;
+}
+
+.shop-card {
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+  width: 100%;
+  padding: 15px;
+  align-items: center;
+  background-color: white;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.shop-card-last {
+  box-sizing: border-box;
+  position: relative;
+  float: left;
+  width: 100%;
+  padding: 15px;
+  align-items: center;
+  background-color: white;
+}
+
+.map {
+  box-sizing: border-box;
+  width: 50%;
 }

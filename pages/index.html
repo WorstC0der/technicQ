@@ -11,32 +11,32 @@
       <nav>
         <a href="actions.html">Акции</a>
         <a href="stores.html">Магазины</a>
-        <a href="bonus.html">Бонусная программа</a>
       </nav>
     </header>
 
-    <div class="container"></div>
+    <div class="container">
+      <div class="logo">
+        <img
+          src="../img/logo.png"
+          alt="Logo"
+          onclick="window.location.href='index.html';"
+        />
+      </div>
+    </div>
 
     <div class="container">
       <div class="sidebar">
-        <div class="logo">
-          <img
-            src="../img/logo.png"
-            alt="Logo"
-            onclick="window.location.href='index.html';"
-          />
-        </div>
         <ul>
           <li>
-            <img src="../img/computer.svg" class="pic" />
+            <img src="../img/index/computer.svg" class="pic" />
             <a href="">ПК, ноутбуки, периферия </a>
           </li>
           <li>
-            <img src="../img/processor.svg" class="pic" />
+            <img src="../img/index/processor.svg" class="pic" />
             <a href="">Комплектующие для ПК</a>
           </li>
           <li>
-            <img src="../img/power.svg" class="pic" />
+            <img src="../img/index/power.svg" class="pic" />
             <a href="">Аксессуары и услуги</a>
           </li>
         </ul>
@@ -44,29 +44,21 @@
 
       <div class="main-content">
         <div class="content">
-          <a href="../pages/actions.html">
-            <div class="card actions">
-              <h3>Акции</h3>
-              <span>Скидки, рассрочки, выгодные комплекты</span>
-            </div>
+          <a class="card actions" href="../pages/actions.html">
+            <h3>Акции</h3>
+            <p>Скидки, рассрочки, выгодные комплекты</p>
           </a>
-          <a href="">
-            <div class="card build-pc">
-              <h3>Собрать ПК</h3>
-              <span>Без проблем с совместимостью</span>
-            </div>
+          <a class="card build-pc" href="">
+            <h3>Собрать ПК</h3>
+            <p>Без проблем с совместимостью</p>
           </a>
-          <a href="">
-            <div class="card ready-made-assemblies">
-              <h3>Готовые сборки</h3>
-              <span>Горячие сборки ПК от пользователей</span>
-            </div>
+          <a class="card ready-made-assemblies" href="">
+            <h3>Готовые сборки</h3>
+            <p>Горячие сборки ПК от пользователей</p>
           </a>
-          <a href="../pages/help.html">
-            <div class="card help">
-              <h3>Помощь</h3>
-              <span>Частые вопросы, полезная информация</span>
-            </div>
+          <a class="card help" href="../pages/help.html">
+            <h3>Помощь</h3>
+            <p>Частые вопросы, полезная информация</p>
           </a>
         </div>
         <br />
@@ -76,9 +68,10 @@
             <div class="actual-offers">
               <div class="white-card">
                 <div class="img_container">
-                  <a>
-                    <img src="../img/laptop.jpg" class="actual-offers-img" />
-                  </a>
+                  <img
+                    src="../img/index/laptop.jpg"
+                    class="actual-offers-img"
+                  />
                 </div>
               </div>
               <div class="nav-card">
@@ -95,12 +88,10 @@
             <div class="actual-offers">
               <div class="white-card">
                 <div class="img_container">
-                  <a>
-                    <img
-                      src="../img/video_card.webp"
-                      class="actual-offers-img"
-                    />
-                  </a>
+                  <img
+                    src="../img/index/video_card.webp"
+                    class="actual-offers-img"
+                  />
                 </div>
               </div>
               <div class="nav-card">
@@ -117,12 +108,10 @@
             <div class="actual-offers">
               <div class="white-card">
                 <div class="img_container">
-                  <a>
-                    <img
-                      src="../img/headphones.jpg"
-                      class="actual-offers-img"
-                    />
-                  </a>
+                  <img
+                    src="../img/index/headphones.jpg"
+                    class="actual-offers-img"
+                  />
                 </div>
               </div>
               <div class="nav-card">
@@ -133,11 +122,60 @@
             </div>
           </div>
         </div>
+        <div class="content">
+          <a class="brand-card" href="">
+            <img src="../img/index/msi.png" class="actual-offers-img" />
+          </a>
+          <a class="brand-card" href="">
+            <img src="../img/index/asus.png" class="actual-offers-img" />
+          </a>
+          <a class="brand-card" href="">
+            <img src="../img/index/corsair.webp" class="actual-offers-img" />
+          </a>
+          <a class="brand-card" href="">
+            <img src="../img/index/logitech.webp" class="actual-offers-img" />
+          </a>
+          <a class="brand-card" href="">
+            <img src="../img/index/amd.png" class="actual-offers-img" />
+          </a>
+        </div>
       </div>
     </div>
 
     <footer>
-      <p>&copy; 2024 TecnicQ. Все права защищены.</p>
+      <div class="footer-container">
+        <div class="content">
+          <div class="footer-group">
+            <p class="footer-titles">Покупателям</p>
+            <ul>
+              <li>
+                <a href="help.html">Как оформить заказ</a>
+              </li>
+              <li>
+                <a href="help.html">Способы оплаты</a>
+              </li>
+              <li>
+                <a href="help.html">Доставка</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-group">
+            <p class="footer-titles">Связь с нами</p>
+            <ul>
+              <li>
+                <p class="footer-text">
+                  <b>+7 987 654-32-10</b> <br />(c 08:00 до 22:00)
+                </p>
+              </li>
+              <li>
+                <a href="stores.html"> Адреса магазинов в г. Белгород</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p class="footer-copyright">&copy; 2024 TecnicQ. Все права защищены.</p>
+      </div>
     </footer>
   </body>
 </html>
