@@ -19,12 +19,12 @@ header {
   box-sizing: border-box;
   height: auto;
   max-width: 1180px;
-  width: 100%;
+  width: 90%;
   margin: 10px auto;
 }
 
 .sidebar {
-  width: 280px;
+  width: 250px;
   box-sizing: border-box;
 }
 
@@ -47,6 +47,7 @@ header {
 .main-content {
   margin-left: 20px;
   height: auto;
+  width: 77%;
 }
 
 .content {
@@ -59,11 +60,11 @@ header {
 }
 
 .logo {
-  width: 280px;
+  width: 250px;
+  height: 60px;
   cursor: pointer;
   background: linear-gradient(to top, #006779, #00a1b4);
   border-radius: 10px;
-  height: 70px;
 }
 
 .logo img {
@@ -96,12 +97,17 @@ nav a.active {
   font-weight: bold;
 }
 
-.nav-card a {
-  display: block;
-  margin-bottom: 10px;
+.nav-card {
+  display: flex;
+  flex-direction: column;
   color: #575757;
   text-decoration: none;
-  padding: 0 10px;
+  gap: 10px;
+}
+
+.nav-card a {
+  color: #575757;
+  text-decoration: none;
   font-size: 14px;
 }
 
@@ -115,12 +121,14 @@ a {
 }
 
 .card {
-  height: 180px;
-  width: 165px;
+  max-height: 200px;
+  max-width: 185px;
+  height: 18vw;
+  width: 16vw;
   background-color: #e6fbff;
   border-radius: 15px;
   padding: 20px;
-  margin: 0 5px;
+  box-sizing: border-box;
 }
 
 .card:hover {
@@ -132,7 +140,7 @@ a {
   background-size: cover;
   background-position: right bottom;
   background-repeat: no-repeat;
-  background-size: 150px;
+  background-size: 80%;
 }
 
 .build-pc {
@@ -140,7 +148,7 @@ a {
   background-size: cover;
   background-position: right bottom;
   background-repeat: no-repeat;
-  background-size: 140px;
+  background-size: 80%;
 }
 
 .ready-made-assemblies {
@@ -148,7 +156,7 @@ a {
   background-size: cover;
   background-position: right bottom;
   background-repeat: no-repeat;
-  background-size: 110px;
+  background-size: 60%;
 }
 
 .help {
@@ -156,41 +164,37 @@ a {
   background-size: cover;
   background-position: right bottom;
   background-repeat: no-repeat;
-  background-size: 110px;
+  background-size: 60%;
 }
 
 .transparent-card {
-  height: 200px;
-  width: 278.333px;
+  width: 22vw;
 }
 
 .white-card {
   float: left;
-  height: 120px;
-  width: 120px;
+  max-height: 120px;
+  max-width: 120px;
+  height: 8.5vw;
+  width: 8.5vw;
   padding: 15px;
   border-radius: 15px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
-  margin-right: 20px;
+  margin-right: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
   background-color: white;
-}
-
-.img_container a {
-  width: 100%;
-  height: 100%;
-  display: flex;
 }
 
 .actual-offers {
   margin-top: 16px;
+  display: flex;
 }
 
 .actual-offers-img {
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
 }
 
 h3 {
@@ -206,16 +210,20 @@ p {
 
 .brand-card {
   float: left;
-  height: 50px;
-  width: 110px;
-  padding: 15px;
+  max-height: 70px;
+  max-width: 130px;
+  height: 7vw;
+  width: 13vw;
   border-radius: 15px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
-  margin-right: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: white;
+}
+
+.brand-card img {
+  width: 80%;
 }
 
 .brand-card:hover {
@@ -298,6 +306,7 @@ footer p {
 .action-card {
   display: flex;
   flex-direction: row;
+  box-sizing: border-box;
   width: 100%;
   margin-bottom: 10px;
   padding: 20px;
