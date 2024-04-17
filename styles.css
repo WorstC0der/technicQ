@@ -23,6 +23,205 @@ header {
   margin: 10px auto;
 }
 
+.header {
+  justify-content: space-around;
+}
+
+.search-container {
+  margin: 0 20px;
+  width: calc(100% - 60px - 250px - 40px);
+  position: relative;
+}
+
+.search {
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  border: none;
+  background: #f7f7f7;
+  padding: 0 120px 0 20px !important;
+  font-size: 16px;
+}
+
+.search-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 60px;
+  padding: 5px 10px;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #f0f0f0; /* Цвет фона при наведении */
+}
+
+.user {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  position: relative;
+  cursor: pointer;
+}
+
+.user img {
+  height: 44px;
+}
+
+.user p {
+  font-size: 14px;
+  height: 16px;
+  margin: 0;
+}
+
+/* Скрытое модальное окно */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Затемнение фона */
+  cursor: default;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 400px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.modal-content b {
+  font-size: 22px;
+}
+
+.loginForm {
+  margin-top: 20px;
+}
+
+.input-container {
+  position: relative;
+  margin-bottom: 15px;
+  display: flex;
+  border-radius: 7px;
+  border: 1px solid #888;
+  overflow: hidden;
+}
+
+.input-container input {
+  width: 100%;
+  border: none;
+  box-sizing: border-box;
+  height: 60px;
+  padding: 15px 0 0 20px;
+  font-size: 16px;
+  font-weight: bold;
+  outline: none;
+  background-color: #f7f7f7;
+}
+
+.input-container label.placeholder {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  color: #888;
+}
+
+.input-container input:focus-within {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.input-container input:focus + label.placeholder,
+.input-container input:not(:placeholder-shown) + label.placeholder {
+  transform: translateX(-4px) translateY(-15px) scale(0.8);
+  color: #888;
+  font-size: 16px;
+}
+
+.toggle-password-button {
+  width: 60px;
+  height: 60px;
+  background-color: transparent;
+  border: none;
+  background-color: #f7f7f7;
+  cursor: pointer;
+}
+
+.error-message {
+  display: none;
+  color: #cc2e12;
+  background-color: #ffebea;
+  border-radius: 7px;
+  font-size: 14px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+}
+
+.login-button {
+  height: 60px;
+  width: 100%;
+  border-radius: 7px;
+  border: none;
+  background: linear-gradient(to top, #006779, #00a1b4);
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+/* Кнопка закрытия */
+.close-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  color: #aaa;
+  font-size: 32px !important;
+  font-weight: bold;
+}
+
+.close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #aaa;
+  font-size: 32px !important;
+  font-weight: bold;
+  height: 18.69px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .sidebar {
   width: 250px;
   box-sizing: border-box;
@@ -37,17 +236,21 @@ header {
 .sidebar ul li {
   padding: 10px;
   display: flex;
-  cursor: default;
 }
 
 .sidebar ul li a:hover {
   color: #00aec2;
 }
 
+.sidebar ul li a {
+  display: flex;
+  align-items: center;
+}
+
 .main-content {
   margin-left: 20px;
   height: auto;
-  width: 77%;
+  width: calc(100% - 270px);
 }
 
 .content {
@@ -69,6 +272,7 @@ header {
 
 .logo img {
   width: 100%;
+  height: 100%;
 }
 
 .logo:hover {
@@ -100,8 +304,6 @@ nav a.active {
 .nav-card {
   display: flex;
   flex-direction: column;
-  color: #575757;
-  text-decoration: none;
   gap: 10px;
 }
 
@@ -172,7 +374,6 @@ a {
 }
 
 .white-card {
-  float: left;
   max-height: 120px;
   max-width: 120px;
   height: 8.5vw;
@@ -209,7 +410,6 @@ p {
 }
 
 .brand-card {
-  float: left;
   max-height: 70px;
   max-width: 130px;
   height: 7vw;
@@ -281,7 +481,6 @@ footer p {
 .footer-group ul li {
   padding: 10px;
   display: flex;
-  cursor: default;
 }
 
 .footer-group a {
@@ -310,16 +509,16 @@ footer p {
   width: 100%;
   margin-bottom: 10px;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 15px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
   background-color: white;
-  cursor: default;
 }
 
 .action-card a {
   padding-bottom: 5px;
   color: black;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .action-card a:hover {
@@ -370,58 +569,96 @@ footer p {
 .help-card {
   box-sizing: border-box;
   position: relative;
-  float: left;
   width: 100%;
   height: 60px;
   padding: 15px;
   border-radius: 15px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
   margin-bottom: 20px;
-  display: flex;
-  align-items: center;
   background-color: white;
 }
 
 .help-card h4 {
   margin: 0px;
   position: relative;
-  margin-left: 15px;
+  margin: 0 15px;
+  line-height: 30px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #575757;
+  transition: color 0.3s ease;
 }
 
-.help-card::after {
-  content: "";
+.help-card h4.opened {
+  color: black;
+}
+
+.help-card h4:hover {
+  color: #00aec2;
+}
+
+.help-card h4:hover .arrow {
+  border-color: #00aec2 transparent transparent transparent;
+}
+
+.accordion {
+  overflow: hidden;
+  max-height: 0;
+  padding: 0px 15px;
+  transition: max-height 0.5s ease;
+  line-height: 1.42857;
+}
+
+.accordion.active {
+  max-height: 1000px;
+}
+
+.accordion.closing {
+  transition: none;
+}
+
+.accordion b {
+  display: block;
+  margin-top: 15px;
+}
+
+.accordion p,
+ul {
+  font-size: 16px;
+  margin: 16px 20px;
+}
+
+.arrow {
   width: 0;
   height: 0;
   border-style: solid;
   border-width: 5px 5px 0 5px;
-  border-color: #333 transparent transparent transparent;
-  margin-left: auto;
-  margin-right: 15px;
+  border-color: #575757 transparent transparent transparent;
 }
 
-.help-card:hover {
-  color: #00aec2;
-  cursor: default;
+.arrow.opened {
+  border-color: #000 transparent transparent transparent;
+  transform: rotate(180deg);
 }
 
 /* Магазины */
 
 .shop-info {
-  padding: 15px;
   border-radius: 15px;
+  overflow: hidden;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
   background-color: white;
 }
 
 .shop-group {
   box-sizing: border-box;
-  width: 50%;
+  width: calc(100% - 512px);
 }
 
 .shop-card {
   box-sizing: border-box;
-  position: relative;
-  float: left;
   width: 100%;
   padding: 15px;
   align-items: center;
@@ -431,8 +668,6 @@ footer p {
 
 .shop-card-last {
   box-sizing: border-box;
-  position: relative;
-  float: left;
   width: 100%;
   padding: 15px;
   align-items: center;
@@ -441,5 +676,5 @@ footer p {
 
 .map {
   box-sizing: border-box;
-  width: 50%;
+  width: 512px;
 }

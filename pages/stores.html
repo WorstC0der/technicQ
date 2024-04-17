@@ -1,26 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TecnicQ</title>
-    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../styles.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="../font-awesome-4.7.0/css/font-awesome.css"
+      type="text/css"
+    />
+    <!-- Фавикон -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../img/favicon//apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../img/favicon//favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../img/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../img/favicon//site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="../img/favicon//safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
   </head>
   <body>
     <header>
       <nav>
         <a href="actions.html">Акции</a>
         <a href="stores.html" class="active">Магазины</a>
+        <a href="help.html">Помощь</a>
       </nav>
     </header>
 
-    <div class="container">
+    <div class="container header">
       <div class="logo">
         <img
           src="../img/logo.png"
           alt="Logo"
           onclick="window.location.href='index.html';"
         />
+      </div>
+      <form action="/search" method="get" class="search-container">
+        <input
+          type="search"
+          name="q"
+          placeholder="Поиск по сайту"
+          class="search"
+        />
+        <button type="submit" class="search-button">
+          <i class="fa fa-search" style="font-size: 20px"></i>
+        </button>
+      </form>
+      <div class="user" id="user">
+        <img src="../img/user.svg" alt="user" />
+        <p>Войти</p>
+        <div id="modal" class="modal">
+          <div class="modal-content">
+            <b>Войти<br />или зарегистрироваться</b>
+            <div class="close-container">
+              <span class="close">&times;</span>
+            </div>
+            <form id="loginForm" class="loginForm">
+              <div class="input-container">
+                <input type="text" id="e-mail" name="e-mail" placeholder="" />
+                <label class="placeholder" for="e-mail">e-mail</label>
+              </div>
+              <div class="input-container">
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder=""
+                />
+                <label class="placeholder" for="password">Пароль</label>
+                <button
+                  id="togglePassword"
+                  type="button"
+                  class="toggle-password-button"
+                >
+                  <i class="fa fa-eye-slash" style="font-size: 20px"></i>
+                </button>
+              </div>
+              <div class="error-message">Ошибка ввода email</div>
+              <button type="submit" class="login-button">Войти</button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -48,7 +127,14 @@
           <p>Ежедневно с 10:00 до 22:00</p>
         </div>
       </div>
-      <div class="map">Карта с помощью js</div>
+      <div class="map">
+        <script
+          type="text/javascript"
+          charset="utf-8"
+          async
+          src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A01409a394611156f49be55c041aa4ec306cd27ee00799edeb8f184c80ea1639a&amp;width=512&amp;height=512&amp;lang=ru_RU&amp;scroll=true"
+        ></script>
+      </div>
     </div>
 
     <footer>
@@ -86,5 +172,6 @@
         <p class="footer-copyright">&copy; 2024 TecnicQ. Все права защищены.</p>
       </div>
     </footer>
+    <script src="../scripts/login.js"></script>
   </body>
 </html>
