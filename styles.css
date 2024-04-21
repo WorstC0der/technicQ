@@ -23,8 +23,32 @@ header {
   margin: 10px auto;
 }
 
+.header-placeholder {
+  height: 90px;
+  display: none;
+}
+
+.header-container {
+  height: 90px;
+  width: 100%;
+  background-color: white;
+  transition: top 0.3s ease;
+}
+
 .header {
   justify-content: space-around;
+  margin: 0 auto;
+  padding: 15px 0;
+  transition: top 0.3s;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 10000;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .search-container {
@@ -106,7 +130,7 @@ header {
   border: 1px solid #888;
   width: 400px;
   box-sizing: border-box;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
   position: relative;
 }
 
@@ -149,7 +173,7 @@ header {
 }
 
 .input-container input:focus-within {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
 }
 
 .input-container input:focus + label.placeholder,
@@ -183,11 +207,15 @@ header {
   width: 100%;
   border-radius: 7px;
   border: none;
-  background: linear-gradient(to top, #006779, #00a1b4);
+  background: linear-gradient(to top, #00677983, #00a2b477);
   font-size: 20px;
   font-weight: bold;
   color: white;
   cursor: pointer;
+}
+
+.login-button.active {
+  background: linear-gradient(to top, #006779, #00a1b4);
 }
 
 /* Кнопка закрытия */
@@ -260,6 +288,7 @@ header {
   height: auto;
   justify-content: space-around;
   width: 100%;
+  margin-bottom: 30px;
 }
 
 .logo {
@@ -380,7 +409,7 @@ a {
   width: 8.5vw;
   padding: 15px;
   border-radius: 15px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   margin-right: 16px;
   display: flex;
   justify-content: center;
@@ -415,7 +444,7 @@ p {
   height: 7vw;
   width: 13vw;
   border-radius: 15px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -427,7 +456,11 @@ p {
 }
 
 .brand-card:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.brand-card:hover img {
+  opacity: 0.65;
 }
 
 footer {
@@ -498,8 +531,76 @@ footer p {
 .title {
   font-size: 32px;
   font-weight: bold;
-  margin: 20px 0;
+  margin: 0 0 20px 0;
 }
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  flex: 0 0 calc(20% - 10px); /* Ширина каждой карточки (20% с отступами между ними) */
+  margin-right: 10px; /* Отступ между карточками */
+}
+
+.carousel-item:last-child {
+  margin-right: 0; /* Уберите отступ у последней карточки */
+}
+
+.carousel-button {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+  font-size: 20px;
+  color: #575757;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: transform 0.2s ease;
+}
+
+.carousel-button:not(.disabled):hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transform: translate(0, -50%) scale(1.1);
+}
+
+.carousel-button.disabled {
+  display: none;
+  background-color: #eee;
+  cursor: default;
+  z-index: 9999;
+}
+
+.carousel-container:hover .carousel-button,
+.carousel-container:hover .carousel-button.disabled {
+  display: flex;
+}
+
+.prev {
+  left: 2%;
+}
+
+.next {
+  right: 2%;
+}
+
 /* Акции */
 
 .action-card {
@@ -510,7 +611,7 @@ footer p {
   margin-bottom: 10px;
   padding: 20px;
   border-radius: 15px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   background-color: white;
 }
 
@@ -557,7 +658,7 @@ footer p {
   background-color: white;
   padding: 15px;
   border-radius: 15px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .checkbox li:hover {
@@ -573,7 +674,7 @@ footer p {
   height: 60px;
   padding: 15px;
   border-radius: 15px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
   background-color: white;
 }
@@ -648,7 +749,7 @@ ul {
 .shop-info {
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   background-color: white;
 }
 

@@ -1,5 +1,12 @@
 const modal = document.getElementById("modal");
 const user = document.getElementById("user");
+const emailInput = document.getElementById("e-mail");
+const passwordInput = document.getElementById("password");
+const emailErrorMessage = document.getElementById("email-error-message");
+const passwordErrorMessage = document.getElementById("password-error-message");
+const loginButton = document.querySelector(".login-button");
+const togglePasswordButton = document.getElementById("togglePassword");
+const closeModalBtn = document.querySelector(".close");
 
 // Открытие модального окна при клике на элемент
 user.addEventListener("click", function (event) {
@@ -8,7 +15,6 @@ user.addEventListener("click", function (event) {
 });
 
 // Закрытие модального окна при клике на кнопку закрытия
-const closeModalBtn = document.querySelector(".close");
 closeModalBtn.addEventListener("click", function (event) {
   modal.style.display = "none";
   resetForm(); // Обнуляем содержимое формы при закрытии
@@ -16,22 +22,22 @@ closeModalBtn.addEventListener("click", function (event) {
 });
 
 // Закрытие модального окна при клике вне modal-content
-window.addEventListener("click", function (event) {
-  console.log("1111111111111111111111111111111111111");
-  // Проверяем, что цель клика находится внутри модального окна, но не внутри modal-content
+modal.addEventListener("click", function (event) {
   if (
     event.target.closest(".modal") &&
     !event.target.closest(".modal-content")
   ) {
     modal.style.display = "none";
     resetForm(); // Обнуляем содержимое формы при закрытии
+    event.stopPropagation(); // Предотвращение дальнейшего распространения события
   }
 });
 
-// Скрытие/раскрытие пароля
-const passwordInput = document.getElementById("password");
-const togglePasswordButton = document.getElementById("togglePassword");
+function toLowercase(input) {
+  input.value = input.value.toLowerCase();
+}
 
+// Скрытие/раскрытие пароля
 togglePasswordButton.addEventListener("click", function () {
   if (passwordInput.type === "password") {
     passwordInput.type = "text";
@@ -44,42 +50,53 @@ togglePasswordButton.addEventListener("click", function () {
   }
 });
 
-// Проверка почты
-const emailInput = document.getElementById("e-mail");
-const errorMessage = document.querySelector(".error-message");
+const emailRegex = /^[a-z0-9](?:[a-z0-9._-]*[a-z0-9])?@[a-z]+\.[a-z]{2,}$/;
+const passwordRegex = /^[a-zA-Z0-9!@#$%^&*()_+{}:;<>,\.?\-].{7,}$/;
 
-emailInput.addEventListener("blur", function () {
-  if (!isValidEmail(emailInput.value)) {
-    errorMessage.style.display = "block";
+function checkInputs() {
+  if (!emailRegex.test(emailInput.value)) {
+    emailErrorMessage.style.display = "block";
   } else {
-    errorMessage.style.display = "none";
+    emailErrorMessage.style.display = "none";
   }
-});
-
-function isValidEmail(email) {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailRegex.test(email);
+  if (!passwordRegex.test(passwordInput.value)) {
+    passwordErrorMessage.style.display = "block";
+  } else {
+    passwordErrorMessage.style.display = "none";
+  }
+  if (
+    emailRegex.test(emailInput.value) &&
+    passwordRegex.test(passwordInput.value)
+  ) {
+    loginButton.classList.add("active");
+    loginButton.disabled = false;
+  } else {
+    loginButton.classList.remove("active");
+    loginButton.disabled = true;
+  }
 }
 
-// Проверка ввода перед отправкой формы
-const loginButton = document.querySelector(".login-button");
-loginButton.addEventListener("click", function (event) {
-  if (!isValidEmail(emailInput.value)) {
-    errorMessage.style.display = "block";
-    event.preventDefault(); // Отменяем отправку формы
-  } else {
-    errorMessage.style.display = "none";
-  }
+// Проверка почты и пароля при изменении значения поля e-mail
+emailInput.addEventListener("blur", function () {
+  checkInputs();
+});
+
+// Проверка почты и пароля при изменении значения поля пароля
+passwordInput.addEventListener("blur", function () {
+  checkInputs();
 });
 
 // Функция для обнуления содержимого формы
 function resetForm() {
   emailInput.value = "";
   passwordInput.value = "";
-  errorMessage.style.display = "none";
+  emailErrorMessage.style.display = "none";
+  passwordErrorMessage.style.display = "none";
   setTimeout(function () {
     passwordInput.type = "password";
     togglePasswordButton.innerHTML =
       '<i class="fa fa-eye" style="font-size: 20px"></i>';
+    loginButton.classList.remove("active");
+    loginButton.disabled = true;
   }, 100);
 }

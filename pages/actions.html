@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TecnicQ</title>
     <link rel="stylesheet" href="../styles.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="../font-awesome-4.7.0/css/font-awesome.css"
+      type="text/css"
+    />
     <!-- Фавикон -->
     <link
       rel="apple-touch-icon"
@@ -41,13 +46,64 @@
       </nav>
     </header>
 
-    <div class="container">
-      <div class="logo">
-        <img
-          src="../img/logo.png"
-          alt="Logo"
-          onclick="window.location.href='index.html';"
-        />
+    <div class="header-placeholder" id="header-placeholder"></div>
+    <div class="header-container" id="header-container">
+      <div class="container header">
+        <div class="logo">
+          <img
+            src="../img/logo.png"
+            alt="Logo"
+            onclick="window.location.href='index.html';"
+          />
+        </div>
+
+        <form action="/search" method="get" class="search-container">
+          <input
+            type="search"
+            name="q"
+            placeholder="Поиск по сайту"
+            class="search"
+          />
+          <button type="submit" class="search-button">
+            <i class="fa fa-search" style="font-size: 20px"></i>
+          </button>
+        </form>
+        <div class="user" id="user">
+          <img src="../img/user.svg" alt="user" />
+          <p>Войти</p>
+          <div id="modal" class="modal">
+            <div class="modal-content">
+              <b>Войти<br />или зарегистрироваться</b>
+              <div class="close-container">
+                <span class="close">&times;</span>
+              </div>
+              <form id="loginForm" class="loginForm">
+                <div class="input-container">
+                  <input type="text" id="e-mail" name="e-mail" placeholder="" />
+                  <label class="placeholder" for="e-mail">e-mail</label>
+                </div>
+                <div class="input-container">
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder=""
+                  />
+                  <label class="placeholder" for="password">Пароль</label>
+                  <button
+                    id="togglePassword"
+                    type="button"
+                    class="toggle-password-button"
+                  >
+                    <i class="fa fa-eye-slash" style="font-size: 20px"></i>
+                  </button>
+                </div>
+                <div class="error-message">Ошибка ввода email</div>
+                <button type="submit" class="login-button">Войти</button>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -165,5 +221,7 @@
         <p class="footer-copyright">&copy; 2024 TecnicQ. Все права защищены.</p>
       </div>
     </footer>
+    <script src="../scripts/login.js"></script>
+    <script src="../scripts/header.js"></script>
   </body>
 </html>
