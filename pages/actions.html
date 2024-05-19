@@ -49,7 +49,11 @@
     <div class="header-placeholder" id="header-placeholder"></div>
     <div class="header-container" id="header-container">
       <div class="container header">
-        <div class="logo">
+        <div
+          class="logo"
+          onmouseover="startGradient()"
+          onmouseout="stopGradient()"
+        >
           <img
             src="../img/logo.png"
             alt="Logo"
@@ -223,5 +227,6 @@
     </footer>
     <script src="../scripts/login.js"></script>
     <script src="../scripts/header.js"></script>
+    <script src="../scripts/logo.js"></script>
   </body>
 </html>

@@ -295,17 +295,13 @@ header {
   width: 250px;
   height: 60px;
   cursor: pointer;
-  background: linear-gradient(to top, #006779, #00a1b4);
+  background: linear-gradient(to top, #005779, #0ddfd5);
   border-radius: 10px;
 }
 
 .logo img {
   width: 100%;
   height: 100%;
-}
-
-.logo:hover {
-  background: linear-gradient(to top, #007488, #00aec2);
 }
 
 .pic {
